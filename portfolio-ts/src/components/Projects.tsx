@@ -14,7 +14,7 @@ export default function Projects() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
         {projects.map((project) => (
           <a href={project.link} key={project.title} className="bg-gray-900 rounded-lg overflow-hidden shadow-lg transform hover:scale-105 transition">
-            <Image src={project.image} width={400} height={250} alt={project.title} className="object-cover w-full h-48"/>
+            <Image src={project.image} width={400} height={250} alt={project.title} className="object-cover w-full h-48" />
             <div className="p-4">
               <h3 className="text-xl font-bold mb-2">{project.title}</h3>
               <p className="text-gray-300">{project.description}</p>
