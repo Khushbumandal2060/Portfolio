@@ -43,7 +43,11 @@ export default function Contact() {
 
       {/* Container */}
       <div className="max-w-2xl mx-auto bg-gray-900/60 backdrop-blur-lg border border-gray-800 p-8 md:p-12 rounded-2xl shadow-2xl">
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 68863f938970df076b46773710ae09362c384a62
         <form onSubmit={handleSubmit} className="flex flex-col gap-6">
 
           {/* Name */}
