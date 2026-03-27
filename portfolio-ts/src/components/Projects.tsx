@@ -4,24 +4,45 @@ import Link from "next/link";
 export default function Projects() {
   const projects = [
     {
-      title: "Job Portal System",
+      title: "JobNepal",
       desc: "A web app where users can apply for jobs and employers can post jobs.",
       tech: "HTML, CSS, JS, PHP, MySQL",
-      github: "#",
+      github: "https://github.com/Khushbumandal2060/Jobnepal",
       live: "#",
     },
     {
-      title: "MRI Detection App",
+      title: "TumorDetect",
       desc: "AI-based system to detect diseases from MRI images.",
       tech: "Python, Flask",
-      github: "#",
+      github: "https://github.com/Khushbumandal2060/TumorDetect",
       live: "#",
     },
     {
       title: "Portfolio Website",
       desc: "Personal portfolio built with Next.js and Tailwind CSS.",
-      tech: "Next.js, Tailwind",
-      github: "#",
+      tech: "Next.js, Tailwind, TypeScript",
+      github: "https://github.com/Khushbumandal2060/Portfolio",
+      live: "#",
+    },
+    {
+      title: "Metrokaushal",
+      desc: "Government Website for trainings in Metropolitian area.",
+      tech: "Python, Dgango",
+      github: "https://github.com/Khushbumandal2060/MetroKaushal",
+      live: "#",
+    },
+    {
+      title: "Weather-App",
+      desc: "Weather app with JavaScripts ans react js.",
+      tech: "JavaScript, React",
+      github: "https://github.com/Khushbumandal2060/Weather-App",
+      live: "#",
+    },
+    {
+      title: "NetflixClone",
+      desc: "Full Stack app with react js and Firebase.",
+      tech: "JavaScript, React",
+      github: "https://github.com/Khushbumandal2060/Netflix_Clone",
       live: "#",
     },
   ];
@@ -76,6 +97,7 @@ export default function Projects() {
                 Live Demo
               </Link>
             </div>
+            
           </div>
         ))}
       </div>
