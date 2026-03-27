@@ -23,7 +23,7 @@ export default function Hero() {
           Hey, I'm
         </p>
 
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold">
+        <h1 className="text-5xl md:text-7xl font-bold gradient-text">
           Khushbu Mandal
         </h1>
 
@@ -50,33 +50,62 @@ export default function Hero() {
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
+        <div className="flex flex-col sm:flex-row gap-4 mt-6">
           <a
             href="#contact"
-            className="bg-cyan-600 hover:bg-cyan-500 transition px-8 py-4 rounded-full shadow-lg text-lg md:text-xl lg:text-2xl"
+            className="bg-cyan-600 hover:bg-cyan-500 px-8 py-4 rounded-full glow transition text-lg"
           >
             Hire Me
           </a>
+
           <a
-            href="/Khushbu_Mandal_CV.pdf"
+            href="/Khushbu Mandal_CV.pdf"
             download
-            className="bg-gray-700 hover:bg-gray-600 transition px-8 py-4 rounded-full shadow-lg text-lg md:text-xl lg:text-2xl"
+            className="glass px-8 py-4 rounded-full hover:border-cyan-400 transition"
           >
             Download CV
           </a>
         </div>
 
-        {/* Social Links */}
-        <div className="mt-8 flex gap-6 text-3xl md:text-4xl">
-          <Link href="https://github.com/Khushbumandal2060" className="hover:text-cyan-400 transition">
-            <FaGithub />
-          </Link>
-          <Link href="https://linkedin.com/in/khushbumandal" className="hover:text-cyan-400 transition">
-            <FaLinkedin />
-          </Link>
-          <Link href="https://instagram.com/in/khushbumandal15" className="hover:text-cyan-400 transition">
-            <FaInstagram />
-          </Link>
+        {/* Social */}
+        <div>
+          <h3 className="text-white font-semibold mb-5 text-xl md:text-2xl">
+            Find me on
+          </h3>
+
+          <div className="flex gap-6 text-3xl md:text-4xl">
+
+            {/* GitHub */}
+            <Link
+              href="https://github.com/Khushbumandal2060"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-cyan-400 transition transform hover:scale-110"
+            >
+              <FaGithub />
+            </Link>
+
+            {/* LinkedIn */}
+            <Link
+              href="https://www.linkedin.com/in/khushbu-kumari-mandal-99637b343/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-cyan-400 transition transform hover:scale-110"
+            >
+              <FaLinkedin />
+            </Link>
+
+            {/* Instagram */}
+            <Link
+              href="https://www.instagram.com/khushbumandal15/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-cyan-400 transition transform hover:scale-110"
+            >
+              <FaInstagram />
+            </Link>
+
+          </div>
         </div>
       </motion.div>
 
