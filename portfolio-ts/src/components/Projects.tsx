@@ -71,7 +71,7 @@ export default function Projects() {
               <Link
                 href={project.live}
                 className="flex-1 text-center bg-cyan-600 px-4 py-2 rounded-lg 
-                         hover:bg-cyan-500 transition glow"
+                         hover:bg-cyan-500 transition "
               >
                 Live Demo
               </Link>
