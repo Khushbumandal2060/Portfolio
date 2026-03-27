@@ -48,7 +48,7 @@ export default function Skills() {
                 {skillCategories.map((category) => (
                     <div
                         key={category.title}
-                        className="bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-[0_0_15px] transition-all"
+                        className="glass p-6 rounded-2xl hover:scale-105 hover:border-cyan-400 transition"
                     >
                         <h3
                             className={`text-2xl md:text-3xl font-bold mb-6 text-${category.color}-400`}
