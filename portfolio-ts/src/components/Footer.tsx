@@ -40,17 +40,42 @@ export default function Footer() {
 
         {/* Social */}
         <div>
-          <h3 className="text-white font-semibold mb-5 text-xl md:text-2xl">Follow Me</h3>
+          <h3 className="text-white font-semibold mb-5 text-xl md:text-2xl">
+            Follow Me
+          </h3>
+
           <div className="flex gap-6 text-3xl md:text-4xl">
-            <Link href="https://github.com/Khushbumandal2060" className="hover:text-cyan-400 transition">
+
+            {/* GitHub */}
+            <Link
+              href="https://github.com/Khushbumandal2060"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-cyan-400 transition transform hover:scale-110"
+            >
               <FaGithub />
             </Link>
-            <Link href="https://linkedin.com/in/khushbumandal" className="hover:text-cyan-400 transition">
+
+            {/* LinkedIn */}
+            <Link
+              href="https://www.linkedin.com/in/khushbu-kumari-mandal-99637b343/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-cyan-400 transition transform hover:scale-110"
+            >
               <FaLinkedin />
             </Link>
-            <Link href="https://instagram.com/in/khushbumandal15" className="hover:text-cyan-400 transition">
+
+            {/* Instagram */}
+            <Link
+              href="https://www.instagram.com/khushbumandal15/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-cyan-400 transition transform hover:scale-110"
+            >
               <FaInstagram />
             </Link>
+
           </div>
         </div>
       </div>
