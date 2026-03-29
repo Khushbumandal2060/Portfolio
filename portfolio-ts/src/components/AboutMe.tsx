@@ -19,9 +19,9 @@ export default function AboutMe() {
           className="md:w-1/2 flex justify-center"
         >
           <Image
-            src="/khushbu.jpg"
+            src="/khushbu1.jpg"
             alt="Khushbu Mandal"
-            width={350}
+            width={450}
             height={350}
             className="rounded-2xl shadow-2xl object-cover hover:scale-105 transition"
           />
