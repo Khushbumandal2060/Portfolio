@@ -62,7 +62,7 @@ const Navbar: React.FC<NavbarProps> = ({ sections }) => {
           onClick={() => handleScrollTo("about")}
           className="text-3xl md:text-4xl font-bold text-white cursor-pointer tracking-wide"
         >
-          Khushbu<span className="text-cyan-400">.</span>
+          Khushbu<span className="text-cyan-400"></span>
         </h1>
 
         {/* Desktop Links */}
