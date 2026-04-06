@@ -15,8 +15,8 @@ export default function Achievements() {
             icon: <FaTrophy />,
         },
         {
-            title: "Web Development Skills",
-            desc: "Learned and built projects using React, Next.js, Tailwind CSS, and modern tools.",
+            title: "Participated in Hackathon",
+            desc: "developed fronted of hotel booking website using HTML, CSS and JavaScript",
             icon: <FaCertificate />,
         },
         {
