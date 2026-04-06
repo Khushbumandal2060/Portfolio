@@ -57,7 +57,7 @@ const Footer: React.FC<FooterProps> = ({ sections }) => {
         <div className="flex flex-col">
           <h3 className="text-white font-semibold mb-5 text-xl md:text-2xl">Contact</h3>
           <p className="flex items-center gap-3 text-lg md:text-xl">
-            <FaEnvelope className="text-cyan-400" /> khusbumandal2060@email.com
+            <FaEnvelope className="text-cyan-400"/>khusbumandal2060@email.com
           </p>
         </div>
 
