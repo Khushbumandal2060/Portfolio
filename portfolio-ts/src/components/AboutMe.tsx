@@ -1,10 +1,12 @@
 "use client";
+import { forwardRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-export default function AboutMe() {
+const AboutMe = forwardRef<HTMLElement>((props, ref) => {
   return (
     <section
+      ref={ref}
       id="about"
       className="py-24 bg-gradient-to-b from-gray-900 to-gray-950 text-white px-6 md:px-20"
     >
@@ -66,7 +68,7 @@ export default function AboutMe() {
             ))}
           </div>
 
-          {/* STATS 🔥 */}
+          {/* STATS */}
           <div className="grid grid-cols-3 gap-6 mb-8 text-center">
             <div>
               <h3 className="text-2xl font-bold text-cyan-400">5+</h3>
@@ -102,4 +104,8 @@ export default function AboutMe() {
       </div>
     </section>
   );
-}
+});
+
+AboutMe.displayName = "AboutMe";
+
+export default AboutMe;
