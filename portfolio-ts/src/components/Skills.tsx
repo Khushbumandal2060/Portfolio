@@ -1,10 +1,13 @@
 "use client";
+import { forwardRef } from "react";
 import { motion } from "framer-motion";
+import { FaCode, FaServer, FaBrain } from "react-icons/fa";
 
 const skillCategories = [
   {
     title: "Frontend",
-    color: "cyan",
+    icon: <FaCode />,
+    gradient: "from-cyan-400 to-blue-500",
     skills: [
       { name: "Next.js", level: 90 },
       { name: "React.js", level: 85 },
@@ -15,7 +18,8 @@ const skillCategories = [
   },
   {
     title: "Backend",
-    color: "cyan",
+    icon: <FaServer />,
+    gradient: "from-purple-400 to-pink-500",
     skills: [
       { name: "Node.js", level: 70 },
       { name: "Java", level: 70 },
@@ -23,13 +27,13 @@ const skillCategories = [
       { name: "MySQL", level: 70 },
       { name: "Django", level: 70 },
       { name: "C#", level: 70 },
-      { name: "C", level: 70 },
       { name: "Python", level: 70 },
     ],
   },
   {
     title: "AI / ML",
-    color: "cyan",
+    icon: <FaBrain />,
+    gradient: "from-green-400 to-emerald-500",
     skills: [
       { name: "Keras", level: 70 },
       { name: "TensorFlow", level: 70 },
@@ -37,68 +41,58 @@ const skillCategories = [
   },
 ];
 
-export default function Skills() {
+const Skills = forwardRef<HTMLElement>((props, ref) => {
   return (
-    <section id="skills" className="py-20 bg-gray-900 text-white px-6 md:px-20">
-      <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center gradient-text">
-        My Skills
+    <section ref={ref} id="skills" className="py-24 bg-gradient-to-b from-gray-900 to-gray-950 text-white px-6 md:px-20">
+      
+      {/* Heading */}
+      <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
+        My <span className="text-cyan-400">Skills</span>
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {skillCategories.map((category) => (
-          <div
+      {/* Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+        {skillCategories.map((category, index) => (
+          <motion.div
             key={category.title}
-            className="glass p-6 rounded-2xl backdrop-blur-md hover:scale-105 hover:shadow-lg transition-transform duration-300"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            className="relative p-6 rounded-2xl bg-gray-900/60 backdrop-blur-lg border border-gray-800 hover:border-cyan-400 transition duration-300 shadow-xl hover:shadow-cyan-500/10"
           >
-            <h3 className={`text-2xl md:text-3xl font-bold mb-6 text-${category.color}-400`}>
-              {category.title}
-            </h3>
+            {/* ICON + TITLE */}
+            <div className="flex items-center gap-3 mb-6">
+              <div className="text-2xl text-cyan-400">{category.icon}</div>
+              <h3 className="text-2xl font-bold">{category.title}</h3>
+            </div>
 
+            {/* Skills */}
             <div className="space-y-5">
               {category.skills.map((skill) => (
                 <div key={skill.name}>
-                  {/* Skill label */}
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-lg md:text-xl font-semibold">{skill.name}</span>
-                    <span className="text-sm md:text-base text-gray-300">{skill.level}%</span>
+                  <div className="flex justify-between mb-2">
+                    <span className="text-sm font-medium">{skill.name}</span>
+                    <span className="text-sm text-gray-400">{skill.level}%</span>
                   </div>
-
-                  {/* Skill bar */}
-                  <div className="w-full bg-gray-700 rounded-full h-5 overflow-hidden relative">
+                  <div className="w-full h-3 bg-gray-800 rounded-full overflow-hidden">
                     <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: `${skill.level}%` }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1.2, ease: "easeInOut" }}
-                      className={`h-5 rounded-full bg-gradient-to-r from-${category.color}-400 via-${category.color}-500 to-${category.color}-600`}
-                    >
-                      {/* Optional shimmer effect */}
-                      <div className="absolute top-0 left-0 h-full w-full bg-white opacity-10 animate-[shine_2s_infinite] rounded-full"></div>
-                    </motion.div>
+                      transition={{ duration: 1 }}
+                      className={`h-3 rounded-full bg-gradient-to-r ${category.gradient}`}
+                    />
                   </div>
                 </div>
               ))}
             </div>
-          </div>
+
+          </motion.div>
         ))}
       </div>
-
-      <style jsx>{`
-        @keyframes shine {
-          0% {
-            transform: translateX(-100%);
-          }
-          50% {
-            transform: translateX(100%);
-          }
-          100% {
-            transform: translateX(100%);
-          }
-        }
-        .animate-[shine_2s_infinite] {
-          animation: shine 2s infinite linear;
-        }
-      `}</style>
     </section>
   );
-}
+});
+
+Skills.displayName = "Skills";
+
+export default Skills;
