@@ -51,12 +51,17 @@ export default function Hero() {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 mt-6">
-          <a
-            href="#contact"
-            className="bg-cyan-600 hover:bg-cyan-500 px-8 py-4 rounded-full glow transition text-lg"
-          >
-            Hire Me
-          </a>
+          <button
+  onClick={() =>
+    document.getElementById("contact")?.scrollIntoView({
+      behavior: "smooth",
+    })
+  }
+  className="bg-cyan-600 hover:bg-cyan-500 px-8 py-4 rounded-full  text-lg"
+>
+  Hire Me
+</button>
+          
 
           <a
             href="/Khushbu Mandal_CV.pdf"
