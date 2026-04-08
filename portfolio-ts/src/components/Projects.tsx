@@ -3,6 +3,7 @@ import { forwardRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import Image from "next/image";
 
 const projects = [
   {
