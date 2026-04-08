@@ -4,4 +4,11 @@ const nextConfig: NextConfig = {
   /* config options here */
 };
 
+// next.config.js
+module.exports = {
+  images: {
+    domains: ["source.unsplash.com"],
+  },
+};
+
 export default nextConfig;
