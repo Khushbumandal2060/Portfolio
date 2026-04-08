@@ -58,7 +58,7 @@ const projects = [
 const Projects = forwardRef<HTMLElement>((props, ref) => {
   return (
     <section ref={ref} id="projects" className="py-24 bg-gradient-to-b from-gray-950 to-black text-white px-6 md:px-20">
-      
+
       <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
         My <span className="text-cyan-400">Projects</span>
       </h2>
@@ -72,12 +72,20 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
             transition={{ duration: 0.6, delay: index * 0.2 }}
             className="group relative rounded-2xl overflow-hidden bg-gray-900/60 backdrop-blur-lg border border-gray-800 hover:border-cyan-400 transition duration-300 shadow-xl"
           >
-            <div className="overflow-hidden">
-              <img
+            <div className="relative h-52 overflow-hidden">
+              <Image
                 src={project.image}
                 alt={project.title}
-                className="w-full h-52 object-cover group-hover:scale-110 transition duration-500"
+                fill
+                className="object-cover transition duration-500 group-hover:scale-110"
               />
+
+              {/* 🔥 Overlay */}
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                <span className="text-white text-sm tracking-wide">
+                  View Project
+                </span>
+              </div>
             </div>
 
             <div className="p-6 flex flex-col">
