@@ -15,14 +15,14 @@ export default function Education() {
             level: "Higher Secondary",
             institution: "Whitehouse International College",
             duration: "2020 - 2022",
-            description: "Completed +2 in Management.",
+            description: "Completed +2 in Management with Computer Science.",
             icon: <FaGraduationCap />,
         },
         {
             level: "BCA",
             institution: "Padma Kanya Multiple Campus",
             duration: "2022 - Present",
-            description: "Studying Web Development & Software Engineering with Computer Science.",
+            description: "Studying Web Development & Software Engineering.",
             icon: <FaUniversity />,
         },
     ];
