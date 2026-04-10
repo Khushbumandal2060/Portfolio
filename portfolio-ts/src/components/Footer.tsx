@@ -32,7 +32,7 @@ const Footer: React.FC<FooterProps> = ({ sections }) => {
             Khushbu<span className="text-cyan-400">.</span>
           </h1>
           <p className="mt-4 text-gray-400 text-base md:text-lg max-w-xs">
-            I build modern, responsive web applications using Next.js, Tailwind CSS, and TypeScript.
+            I build modern, responsive web applications using Next.js, Tailwind CSS, and TypeScript and Backend.
           </p>
         </div>
 
