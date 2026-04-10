@@ -22,7 +22,7 @@ export default function Education() {
             level: "BCA",
             institution: "Padma Kanya Multiple Campus",
             duration: "2022 - Present",
-            description: "Studying Web Development & Software Engineering.",
+            description: "Studying Web Development & Software Engineering with Computer Science.",
             icon: <FaUniversity />,
         },
     ];
