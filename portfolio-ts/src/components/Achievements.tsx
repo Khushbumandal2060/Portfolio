@@ -16,7 +16,7 @@ export default function Achievements() {
         },
         {
             title: "Participated in Hackathon",
-            desc: "developed fronted of hotel booking website using HTML, CSS and JavaScript",
+            desc: "Developed fronted of hotel booking website using HTML, CSS and JavaScript",
             icon: <FaCertificate />,
         },
         {
