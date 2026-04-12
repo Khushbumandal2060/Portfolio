@@ -16,7 +16,7 @@ const projects = [
   },
   {
     title: "TumorDetect",
-    desc: "AI-based system to detect diseases from MRI images.",
+    desc: "AI-based system to detect brain tumor from MRI images.",
     tech: ["Python", "Flask", "AI"],
     github: "https://github.com/Khushbumandal2060/TumorDetect",
     live: "#",
