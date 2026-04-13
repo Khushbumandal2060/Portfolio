@@ -44,7 +44,7 @@ const projects = [
     tech: ["JavaScript", "React"],
     github: "https://github.com/Khushbumandal2060/Weather-App",
     live: "#",
-    image: "https://source.unsplash.com/600x400/?weather,app",
+    image: "/weather.png",
   },
   {
     title: "Netflix Clone",
