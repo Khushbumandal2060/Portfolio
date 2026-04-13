@@ -20,7 +20,7 @@ const projects = [
     tech: ["Python", "Flask", "AI"],
     github: "https://github.com/Khushbumandal2060/TumorDetect",
     live: "#",
-    image: "https://source.unsplash.com/600x400/?ai,medical",
+    image: "/braintumor.png",
   },
   {
     title: "Portfolio Website",
@@ -28,7 +28,7 @@ const projects = [
     tech: ["Next.js", "Tailwind", "TypeScript"],
     github: "https://github.com/Khushbumandal2060/Portfolio",
     live: "#",
-    image: "https://source.unsplash.com/600x400/?portfolio,web",
+    image: "/portfolio.png",
   },
   {
     title: "Metrokaushal",
