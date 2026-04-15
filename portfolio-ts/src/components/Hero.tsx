@@ -63,13 +63,23 @@ export default function Hero() {
 </button>
           
 
-          <a
-            href="/Khushbu Mandal_CV.pdf"
-            download
-            className="glass px-8 py-4 rounded-full hover:border-cyan-400 transition"
-          >
-            Download CV
-          </a>
+         <div className="flex gap-4">
+  <a
+    href="/Khushbu Mandal(CV).pdf"
+    target="_blank"
+    className="glass px-6 py-3 rounded-full"
+  >
+    View CV
+  </a>
+
+  <a
+    href="/Khushbu Mandal(CV).pdf"
+    download
+    className="bg-cyan-600 px-6 py-3 rounded-full"
+  >
+    Download CV
+  </a>
+</div>
         </div>
 
         {/* Social */}
