@@ -84,7 +84,7 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
               {/* 🔥 Overlay */}
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
                 <span className="text-white text-sm tracking-wide">
-                  View Project
+                  View Projects
                 </span>
               </div>
             </div>
