@@ -9,6 +9,8 @@ const skillCategories = [
     icon: <FaCode />,
     gradient: "from-cyan-400 to-blue-500",
     skills: [
+       { name: "HTML", level: 90 },
+        { name: "CSS", level: 90 },
       { name: "Next.js", level: 90 },
       { name: "React.js", level: 85 },
       { name: "TypeScript", level: 80 },
