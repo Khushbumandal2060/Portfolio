@@ -52,7 +52,7 @@ const AboutMe = forwardRef<HTMLElement>((props, ref) => {
           </p>
 
           <p className="text-gray-400 mb-6 leading-relaxed">
-            I work with technologies like <span className="text-white">Next.js, React, Tailwind CSS, PHP, Python, Node.js and MySQL</span>.
+            I work with technologies like <span className="text-white">Next.js, React, Tailwind CSS, PHP, Python, Node.js, MySQL and sqlite</span>.
             My goal is to become a full-stack developer and create impactful digital solutions.
           </p>
 
