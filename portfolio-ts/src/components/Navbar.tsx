@@ -35,6 +35,7 @@ const Navbar: React.FC<NavbarProps> = ({ sections }) => {
 
   const navLinks = [
     { label: "About", ref: "about" },
+    { label: "Services", ref: "services" },
     { label: "Skills", ref: "skills" },
     { label: "Projects", ref: "projects" },
     { label: "Education", ref: "education" },
