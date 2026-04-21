@@ -1,103 +1,95 @@
 "use client";
-import { forwardRef } from "react";
+
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import Image from "next/image";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const projects = [
   {
     title: "JobNepal",
-    desc: "A web app where users can apply for jobs and employers can post jobs.",
+    desc: "Job portal for posting and applying jobs.",
     tech: ["HTML", "CSS", "JS", "PHP", "MySQL"],
     github: "https://github.com/Khushbumandal2060/Jobnepal",
     live: "#",
-    image: "https://source.unsplash.com/600x400/?website,job",
+    image: "/jobnepal.png",
   },
   {
     title: "TumorDetect",
-    desc: "AI-based system to detect brain tumor from MRI images.",
+    desc: "AI system for brain tumor detection from MRI images.",
     tech: ["Python", "Flask", "AI"],
     github: "https://github.com/Khushbumandal2060/TumorDetect",
     live: "#",
     image: "/braintumor.png",
   },
   {
-    title: "Portfolio Website",
-    desc: "Personal portfolio built with Next.js and Tailwind CSS.",
-    tech: ["Next.js", "Tailwind", "TypeScript"],
+    title: "Portfolio",
+    desc: "Personal portfolio website built with Next.js.",
+    tech: ["Next.js", "Tailwind"],
     github: "https://github.com/Khushbumandal2060/Portfolio",
     live: "#",
     image: "/portfolio.png",
   },
   {
-    title: "Metrokaushal",
-    desc: "Government Website for trainings in metropolitan area.",
-    tech: ["Python", "Django"],
-    github: "https://github.com/Khushbumandal2060/MetroKaushal",
-    live: "#",
-    image: "https://source.unsplash.com/600x400/?government,website",
-  },
-  {
-    title: "Weather App",
-    desc: "Weather app with JavaScript and React.",
-    tech: ["JavaScript", "React"],
-    github: "https://github.com/Khushbumandal2060/Weather-App",
-    live: "#",
-    image: "/weather.png",
-  },
-  {
-    title: "Netflix Clone",
-    desc: "Full stack app with React and Firebase.",
-    tech: ["React", "Firebase"],
+    title: "Netflix_Clone",
+    desc: "Full Stack Netflix Clone using React JS and Firebase.",
+    tech: ["React JS", "Tailwind CSS", "Firebase"],
     github: "https://github.com/Khushbumandal2060/Netflix_Clone",
     live: "#",
-    image: "https://source.unsplash.com/600x400/?netflix,app",
+    image: "/netflix.jpg",
+  },
+  {
+    title: "MetroKaushal",
+    desc: "Government training platform web system.",
+    tech: ["Django", "Python"],
+    github: "https://github.com/Khushbumandal2060/MetroKaushal",
+    live: "#",
+    image: "/metro.png",
   },
 ];
 
-const Projects = forwardRef<HTMLElement>((props, ref) => {
+export default function Projects() {
   return (
-    <section ref={ref} id="projects" className="py-24 bg-gradient-to-b from-gray-950 to-black text-white px-6 md:px-20">
-
+    <section className="py-24 bg-gray-950 text-white px-6 md:px-20">
       <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
         My <span className="text-cyan-400">Projects</span>
       </h2>
 
       <div className="grid md:grid-cols-3 gap-10 max-w-7xl mx-auto">
-        {projects.map((project, index) => (
+        {projects.map((project, i) => (
           <motion.div
             key={project.title}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
-            className="group relative rounded-2xl overflow-hidden bg-gray-900/60 backdrop-blur-lg border border-gray-800 hover:border-cyan-400 transition duration-300 shadow-xl"
+            transition={{ delay: i * 0.1 }}
+            className="group h-full flex flex-col bg-gray-900 border border-gray-800 rounded-3xl overflow-hidden
+                       hover:border-cyan-400 hover:shadow-xl hover:shadow-cyan-500/10 transition-all duration-300"
           >
-            <div className="relative h-52 overflow-hidden">
+            {/* IMAGE */}
+            <div className="relative w-full h-56 overflow-hidden">
               <Image
                 src={project.image}
                 alt={project.title}
                 fill
-                className="object-cover transition duration-500 group-hover:scale-110"
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
-
-              {/* 🔥 Overlay */}
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                <span className="text-white text-sm tracking-wide">
-                  View Projects
-                </span>
-              </div>
+              {/* subtle overlay for premium feel */}
+              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition" />
             </div>
 
-            <div className="p-6 flex flex-col">
-              <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
-              <p className="text-gray-300 text-sm mb-4">{project.desc}</p>
+            {/* CONTENT */}
+            <div className="p-6 flex flex-col flex-1">
+              <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+
+              <p className="text-gray-400 text-sm mb-4 flex-1 leading-relaxed">
+                {project.desc}
+              </p>
 
               <div className="flex flex-wrap gap-2 mb-5">
                 {project.tech.map((t) => (
                   <span
                     key={t}
-                    className="text-xs bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-full border border-cyan-500/20"
+                    className="text-xs px-3 py-1 bg-cyan-500/10 text-cyan-300 rounded-full"
                   >
                     {t}
                   </span>
@@ -107,16 +99,14 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
               <div className="flex gap-3 mt-auto">
                 <Link
                   href={project.github}
-                  target="_blank"
-                  className="flex items-center justify-center gap-2 flex-1 bg-gray-800 py-2 rounded-lg hover:bg-gray-700 transition"
+                  className="flex-1 flex items-center justify-center gap-2 bg-gray-800 hover:bg-gray-700 py-2 rounded-xl transition"
                 >
                   <FaGithub /> Code
                 </Link>
 
                 <Link
                   href={project.live}
-                  target="_blank"
-                  className="flex items-center justify-center gap-2 flex-1 bg-cyan-600 py-2 rounded-lg hover:bg-cyan-500 transition"
+                  className="flex-1 flex items-center justify-center gap-2 bg-cyan-600 hover:bg-cyan-500 py-2 rounded-xl transition"
                 >
                   <FaExternalLinkAlt /> Live
                 </Link>
@@ -127,8 +117,4 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
       </div>
     </section>
   );
-});
-
-Projects.displayName = "Projects";
-
-export default Projects;
+}
