@@ -58,7 +58,7 @@ const AboutMe = forwardRef<HTMLElement>((props, ref) => {
 
           {/* SKILLS */}
           <div className="flex flex-wrap gap-3 mb-8">
-            {["Next.js", "React", "Tailwind", "PHP", "MySQL"].map((skill) => (
+            {["Next.js", "React", "Tailwind", "PHP","Python", "MySQL","SQLite"].map((skill) => (
               <span
                 key={skill}
                 className="px-4 py-2 bg-gray-800 text-sm rounded-full border border-gray-700 hover:border-cyan-400 hover:text-cyan-400 transition"
