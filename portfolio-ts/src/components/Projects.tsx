@@ -25,7 +25,7 @@ const projects = [
   {
     title: "Portfolio",
     desc: "Personal portfolio website built with Next.js.",
-    tech: ["Next.js", "Tailwind"],
+    tech: ["Next.js", "Tailwind", "Nodemailer"],
     github: "https://github.com/Khushbumandal2060/Portfolio",
     live: "#",
     image: "/portfolio.png",
@@ -37,6 +37,14 @@ const projects = [
     github: "https://github.com/Khushbumandal2060/Netflix_Clone",
     live: "#",
     image: "/netflix.jpg",
+  },
+  {
+    title: "WeatherApp",
+    desc: "Weather application built with React JS and Firebase.",
+    tech: ["React JS", "Firebase"],
+    github: "https://github.com/Khushbumandal2060/WeatherApp",
+    live: "#",
+    image: "/weather.png",
   },
   {
     title: "MetroKaushal",
