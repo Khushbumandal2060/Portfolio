@@ -63,7 +63,7 @@ const Footer: React.FC<FooterProps> = ({ sections }) => {
 
         {/* SOCIAL */}
         <div className="flex flex-col">
-          <h3 className="text-white font-semibold mb-5 text-xl md:text-2xl">Follow Me</h3>
+          <h3 className="text-white font-semibold mb-5 text-xl md:text-2xl">Find Me On</h3>
           <div className="flex gap-6 text-3xl md:text-4xl mt-2">
             <a href="https://github.com/Khushbumandal2060" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 transition transform hover:scale-110">
               <FaGithub />
