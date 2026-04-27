@@ -94,7 +94,7 @@ const AboutMe = forwardRef<HTMLElement>((props, ref) => {
             </a>
 
             <a
-              href="/cv.pdf"
+              href="/Khushbu Mandal(CV).pdf"
               className="px-8 py-3 border border-gray-700 hover:border-cyan-400 hover:text-cyan-400 transition rounded-full"
             >
               Download CV
