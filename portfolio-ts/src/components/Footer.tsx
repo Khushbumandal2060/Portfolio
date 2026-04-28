@@ -29,7 +29,7 @@ const Footer: React.FC<FooterProps> = ({ sections }) => {
             className="text-3xl md:text-4xl font-bold text-white hover:text-cyan-400 cursor-pointer"
             onClick={() => scrollToSection("about")}
           >
-            Khushbu<span className="text-cyan-400">.</span>
+            Khushbu
           </h1>
           <p className="mt-4 text-gray-400 text-base md:text-lg max-w-xs">
             I build modern, responsive web applications using Next.js, Tailwind CSS, TypeScript and Backend.
