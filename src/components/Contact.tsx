@@ -86,8 +86,12 @@ export default function Contact() {
                   <FiMail className="text-base" />
                 </div>
                 <div>
-                  <p className="text-xs text-zinc-600 uppercase tracking-wider font-medium">Email</p>
-                  <p className="text-sm text-zinc-300">khusbumandal2060@email.com</p>
+                  <p className="text-xs text-zinc-600 uppercase tracking-wider font-medium">
+                    Email
+                  </p>
+                  <p className="text-sm text-zinc-300">
+                    khusbumandal2060@email.com
+                  </p>
                 </div>
               </div>
             </div>
@@ -99,7 +103,9 @@ export default function Contact() {
                   <FiMapPin className="text-base" />
                 </div>
                 <div>
-                  <p className="text-xs text-zinc-600 uppercase tracking-wider font-medium">Location</p>
+                  <p className="text-xs text-zinc-600 uppercase tracking-wider font-medium">
+                    Location
+                  </p>
                   <p className="text-sm text-zinc-300">Nepal 🇳🇵</p>
                 </div>
               </div>
@@ -107,11 +113,21 @@ export default function Contact() {
 
             {/* Social links */}
             <div className="p-5 rounded-2xl bg-white/2 border border-white/5">
-              <p className="text-xs text-zinc-600 uppercase tracking-wider font-medium mb-3">Connect</p>
+              <p className="text-xs text-zinc-600 uppercase tracking-wider font-medium mb-3">
+                Connect
+              </p>
               <div className="flex gap-3">
                 {[
-                  { icon: FaGithub, href: "https://github.com/Khushbumandal2060", label: "GitHub" },
-                  { icon: FaLinkedin, href: "https://www.linkedin.com/in/khushbu-kumari-mandal-99637b343/", label: "LinkedIn" },
+                  {
+                    icon: FaGithub,
+                    href: "https://github.com/Khushbumandal2060",
+                    label: "GitHub",
+                  },
+                  {
+                    icon: FaLinkedin,
+                    href: "https://www.linkedin.com/in/khushbu-kumari-mandal-99637b343/",
+                    label: "LinkedIn",
+                  },
                 ].map(({ icon: Icon, href, label }) => (
                   <a
                     key={label}
@@ -139,8 +155,8 @@ export default function Contact() {
             className="lg:col-span-3 space-y-4 p-7 rounded-2xl
               bg-white/2 border border-white/5"
           >
-            {/* Name & Email */}
-            <div className="grid md:grid-cols-2 gap-4">
+            {/* Name & Email (STACKED) */}
+            <div className="grid grid-cols-1 gap-4">
               <div className="space-y-1.5">
                 <label className="text-[11px] text-zinc-600 uppercase tracking-wider font-semibold">
                   Name
