@@ -34,7 +34,7 @@ const projects = [
     title: "WeatherApp",
     desc: "Real-time weather application with location-based forecasts and clean UI.",
     tech: ["React", "API", "Firebase"],
-    github: "https://github.com/Khushbumandal2060/WeatherApp",
+    github: "https://github.com/Khushbumandal2060/Weather-App",
     live: "#",
     image: "/weather.png",
   },
