@@ -13,7 +13,6 @@ const projects = [
     github: "https://github.com/Khushbumandal2060/Jobnepal",
     live: "#",
     image: "/Jobnepal.png",
-    featured: true,
   },
   {
     title: "TumorDetect",
@@ -22,16 +21,6 @@ const projects = [
     github: "https://github.com/Khushbumandal2060/TumorDetect",
     live: "#",
     image: "/braintumor.png",
-    featured: true,
-  },
-  {
-    title: "Portfolio",
-    desc: "Personal portfolio website built with Next.js and modern web technologies.",
-    tech: ["Next.js", "Tailwind", "Resend"],
-    github: "https://github.com/Khushbumandal2060/Portfolio",
-    live: "#",
-    image: "/portfolio.png",
-    featured: false,
   },
   {
     title: "Netflix Clone",
@@ -40,7 +29,6 @@ const projects = [
     github: "https://github.com/Khushbumandal2060/Netflix_Clone",
     live: "#",
     image: "/netflix.jpg",
-    featured: false,
   },
   {
     title: "WeatherApp",
@@ -49,16 +37,6 @@ const projects = [
     github: "https://github.com/Khushbumandal2060/WeatherApp",
     live: "#",
     image: "/weather.png",
-    featured: false,
-  },
-  {
-    title: "MetroKaushal",
-    desc: "Government training platform web system for skill development programs.",
-    tech: ["Django", "Python", "SQLite"],
-    github: "https://github.com/Khushbumandal2060/MetroKaushal",
-    live: "#",
-    image: "/metro.png",
-    featured: false,
   },
 ];
 
@@ -68,142 +46,100 @@ export default function Projects() {
       id="projects"
       className="relative py-32 px-6 lg:px-20 overflow-hidden"
     >
-      {/* Ambient */}
-      <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-fuchsia-600/3 rounded-full blur-[140px] -z-10" />
+      {/* Background Glow */}
+      <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-fuchsia-600/5 rounded-full blur-[140px] -z-10" />
 
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true }}
           className="text-center mb-20"
         >
           <p className="section-label mb-3">Portfolio</p>
+
           <h2 className="section-title">
             Featured <span className="gradient-text">Projects</span>
           </h2>
-          <p className="text-zinc-500 text-sm mt-4 max-w-md mx-auto">
-            A selection of projects I&apos;ve built to solve real problems and learn new technologies.
+
+          <p className="text-zinc-500 text-sm mt-4 max-w-xl mx-auto">
+            A selection of projects I've built to solve real problems and learn
+            new technologies.
           </p>
         </motion.div>
 
-        {/* Featured projects — large cards */}
-        <div className="grid md:grid-cols-2 gap-5 mb-5">
-          {projects.filter((p) => p.featured).map((project, i) => (
+        {/* Projects Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {projects.map((project, i) => (
             <motion.div
               key={project.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: i * 0.1 }}
-              className="group relative rounded-2xl overflow-hidden
-                bg-white/2 border border-white/5
-                hover:border-white/8
-                transition-all duration-500"
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08 }}
+              className="group h-[430px] rounded-2xl overflow-hidden
+              bg-white/[0.03]
+              border border-white/10
+              hover:border-violet-500/30
+              transition-all duration-500
+              flex flex-col"
             >
-              {/* IMAGE */}
-              <div className="relative w-full h-56 overflow-hidden">
+              {/* Image */}
+              <div className="relative h-48 w-full overflow-hidden">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-[#050505] via-[#050505]/40 to-transparent" />
 
-                {/* Overlay actions */}
-                <div className="absolute bottom-4 left-4 right-4 flex gap-2">
-                  <Link
-                    href={project.github}
-                    target="_blank"
-                    className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium
-                      bg-white/10 backdrop-blur-md rounded-lg border border-white/10
-                      text-white hover:bg-white/20 transition-all duration-300"
-                  >
-                    <FaGithub /> Code
-                  </Link>
-                  <Link
-                    href={project.live}
-                    className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium
-                      bg-violet-600/80 backdrop-blur-md rounded-lg
-                      text-white hover:bg-violet-500/80 transition-all duration-300"
-                  >
-                    <FaExternalLinkAlt className="text-[10px]" /> Live
-                  </Link>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/80 to-transparent" />
               </div>
 
-              {/* CONTENT */}
-              <div className="p-5">
-                <h3 className="text-lg font-bold text-white mb-1.5">
+              {/* Content */}
+              <div className="p-5 flex flex-col flex-1">
+                <h3 className="text-lg font-bold text-white mb-2">
                   {project.title}
                 </h3>
-                <p className="text-zinc-500 text-sm leading-relaxed mb-4">
+
+                <p className="text-zinc-400 text-sm leading-relaxed flex-1 line-clamp-3">
                   {project.desc}
                 </p>
-                <div className="flex flex-wrap gap-1.5">
-                  {project.tech.map((t) => (
+
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {project.tech.map((tech) => (
                     <span
-                      key={t}
-                      className="text-[11px] px-2.5 py-1 rounded-full font-medium
-                        bg-violet-500/8 text-violet-300 border border-violet-500/10"
+                      key={tech}
+                      className="text-[11px] px-2 py-1 rounded-full
+                      bg-violet-500/10
+                      text-violet-300
+                      border border-violet-500/20"
                     >
-                      {t}
+                      {tech}
                     </span>
                   ))}
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
 
-        {/* Other projects — smaller cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {projects.filter((p) => !p.featured).map((project, i) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: i * 0.08 }}
-              className="group p-5 rounded-2xl
-                bg-white/2 border border-white/5
-                hover:bg-white/4 hover:border-white/8
-                transition-all duration-500 flex flex-col"
-            >
-              {/* Thumbnail */}
-              <div className="relative w-full h-32 rounded-xl overflow-hidden mb-4">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-linear-to-t from-[#050505]/60 to-transparent" />
-              </div>
+                {/* Links */}
+                <div className="flex gap-4 mt-5">
+                  <Link
+                    href={project.github}
+                    target="_blank"
+                    className="text-zinc-400 hover:text-violet-400 transition-colors"
+                  >
+                    <FaGithub size={18} />
+                  </Link>
 
-              <h3 className="text-sm font-bold text-white mb-1">
-                {project.title}
-              </h3>
-              <p className="text-zinc-600 text-xs leading-relaxed mb-3 flex-1">
-                {project.desc}
-              </p>
-
-              <div className="flex gap-2 mt-auto">
-                <Link
-                  href={project.github}
-                  target="_blank"
-                  className="text-zinc-600 hover:text-violet-400 text-sm transition-colors"
-                >
-                  <FaGithub />
-                </Link>
-                <Link
-                  href={project.live}
-                  className="text-zinc-600 hover:text-violet-400 text-[11px] transition-colors"
-                >
-                  <FaExternalLinkAlt />
-                </Link>
+                  <Link
+                    href={project.live}
+                    target="_blank"
+                    className="text-zinc-400 hover:text-violet-400 transition-colors"
+                  >
+                    <FaExternalLinkAlt size={16} />
+                  </Link>
+                </div>
               </div>
             </motion.div>
           ))}
