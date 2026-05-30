@@ -11,6 +11,7 @@ type ContactRequestBody = {
 export async function POST(request: Request) {
   let body: ContactRequestBody;
 
+  // Parse JSON safely
   try {
     body = await request.json();
   } catch {
@@ -24,6 +25,7 @@ export async function POST(request: Request) {
   const email = body.email?.trim();
   const message = body.message?.trim();
 
+  // Validate input
   if (!name || !email || !message) {
     return Response.json(
       { success: false, message: "Missing required fields" },
@@ -31,31 +33,20 @@ export async function POST(request: Request) {
     );
   }
 
+  // Environment variables
   const apiKey = process.env.RESEND_API_KEY;
-  const toEmail = process.env.RESEND_TO ?? process.env.EMAIL;
-  const fromEmail = process.env.RESEND_FROM;
+  const toEmail = process.env.RESEND_TO;
 
   if (!apiKey) {
     return Response.json(
-      { success: false, message: "Server email is not configured" },
+      { success: false, message: "Missing RESEND_API_KEY" },
       { status: 500 }
     );
   }
 
   if (!toEmail) {
     return Response.json(
-      { success: false, message: "Server email is not configured" },
-      { status: 500 }
-    );
-  }
-
-  if (!fromEmail) {
-    return Response.json(
-      {
-        success: false,
-        message:
-          "Server email is not configured (missing RESEND_FROM sender address)",
-      },
+      { success: false, message: "Missing RESEND_TO email" },
       { status: 500 }
     );
   }
@@ -63,19 +54,47 @@ export async function POST(request: Request) {
   const resend = new Resend(apiKey);
 
   try {
-    await resend.emails.send({
-      from: fromEmail,
+    // Send email
+    const result = await resend.emails.send({
+      from: "Portfolio <contact@khushbumandal.com.np>", // FIXED (important)
       to: toEmail,
-      subject: `New message from ${name}`,
+      subject: `📬 New message from ${name}`,
       replyTo: email,
-      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+      html: `
+        <div style="font-family:Arial;padding:20px;background:#f9fafb;border-radius:10px">
+          
+          <h2 style="color:#111827;">New Contact Message</h2>
+
+          <p><strong>Name:</strong> ${name}</p>
+
+          <p><strong>Email:</strong> 
+            <a href="mailto:${email}">${email}</a>
+          </p>
+
+          <p><strong>Message:</strong></p>
+
+          <div style="padding:12px;background:white;border-left:4px solid #6366f1;">
+            ${message}
+          </div>
+
+        </div>
+      `,
     });
 
-    return Response.json({ success: true, message: "Email sent" });
+    console.log("EMAIL SENT SUCCESS:", result);
+
+    return Response.json({
+      success: true,
+      message: "Email sent successfully",
+    });
   } catch (error) {
-    console.error("Error sending contact email", error);
+    console.error("EMAIL ERROR:", error);
+
     return Response.json(
-      { success: false, message: "Error sending email" },
+      {
+        success: false,
+        message: "Failed to send email",
+      },
       { status: 500 }
     );
   }
