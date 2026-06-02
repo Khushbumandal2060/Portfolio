@@ -153,14 +153,14 @@ const AboutMe = forwardRef<HTMLElement>((props, ref) => {
                 Contact Me
               </a>
               <a
-                href="/Khushbu Mandal(CV).pdf"
+                href="/Khushbu_resume.pdf"
                 download
                 className="px-7 py-3 rounded-full text-sm font-medium
                   bg-white/4 border border-white/8
                   text-zinc-400 hover:text-white hover:border-white/12
                   transition-all duration-300"
               >
-                Download CV
+                Resume
               </a>
             </div>
           </motion.div>
