@@ -142,7 +142,7 @@ export default function Hero() {
           </button>
 
           <a
-            href="/Khushbu_resume.pdf"
+            href="/khushbu_resume.pdf"
             download
             className="flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium
               bg-white/4 border border-white/8 text-zinc-300
