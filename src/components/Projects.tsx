@@ -33,7 +33,7 @@ const projects = [
   {
     title: "WeatherApp",
     desc: "Real-time weather application with location-based forecasts and clean UI.",
-    tech: ["React", "OpenWeather API", "Firebase"],
+    tech: ["React", "OpenWeather API", "JavaScript"],
     github: "https://github.com/Khushbumandal2060/Weather-App",
     live: "https://weather-app-blue-six-32.vercel.app/",
     image: "/weather.png",
