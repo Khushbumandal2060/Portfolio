@@ -103,7 +103,7 @@ const Footer: React.FC<FooterProps> = ({ sections }) => {
             <div className="flex gap-2">
               {[
                 { icon: FaGithub, href: "https://github.com/Khushbumandal2060" },
-                { icon: FaLinkedin, href: "https://www.linkedin.com/in/khushbu-kumari-mandal-99637b343/" },
+                { icon: FaLinkedin, href: "https://www.linkedin.com/in/khushbu-kumari-mandal/" },
                 { icon: FaInstagram, href: "https://www.instagram.com/khushbumandal15/" },
               ].map(({ icon: Icon, href }) => (
                 <Link
