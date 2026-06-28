@@ -27,7 +27,7 @@ const projects = [
     desc: "A secure full-stack authentication system with Email OTP verification, JWT authentication, password reset, active session management, security audit logs, and modern responsive UI.",
     tech: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "JWT", "bcrypt.js", "Nodemailer"],
     github: "https://github.com/Khushbumandal2060/Authentication-System",
-    live: "https://authentication-system-frontend-1ly2.onrender.com/register",
+    live: "https://authentication-system-frontend-1ly2.onrender.com/",
     image: "/authentication.png",
   },
   {
