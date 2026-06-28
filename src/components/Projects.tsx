@@ -23,12 +23,12 @@ const projects = [
     image: "/braintumor.png",
   },
   {
-    title: "Netflix Clone",
-    desc: "Full Stack Netflix Clone with authentication and streaming UI using React and Firebase.",
-    tech: ["React", "Tailwind CSS", "Firebase"],
-    github: "https://github.com/Khushbumandal2060/Netflix_Clone",
-    live: "#",
-    image: "/netflix.jpg",
+    title: "Authentication System",
+    desc: "A secure full-stack authentication system with Email OTP verification, JWT authentication, password reset, active session management, security audit logs, and modern responsive UI.",
+    tech: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "JWT", "bcrypt.js", "Nodemailer"],
+    github: "https://github.com/Khushbumandal2060/Authentication-System",
+    live: "https://authentication-system-frontend-1ly2.onrender.com/register",
+    image: "/authentication.png",
   },
   {
     title: "WeatherApp",
