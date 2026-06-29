@@ -150,7 +150,7 @@ export default function Hero() {
               transition-all duration-300"
           >
             <FiDownload className="text-base" />
-            Resume
+            Download CV
           </a>
         </motion.div>
 

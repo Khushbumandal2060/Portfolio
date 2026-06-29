@@ -160,7 +160,7 @@ const AboutMe = forwardRef<HTMLElement>((props, ref) => {
                   text-zinc-400 hover:text-white hover:border-white/12
                   transition-all duration-300"
               >
-                Resume
+                Download CV
               </a>
             </div>
           </motion.div>
