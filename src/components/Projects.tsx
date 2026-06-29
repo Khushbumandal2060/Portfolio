@@ -17,15 +17,16 @@ const projects = [
   {
     title: "TumorDetect",
     desc: "AI-powered brain tumor detection system from MRI images using deep learning.",
-    tech: ["Python", "Flask", "TensorFlow"],
+    tech: ["Python", "Flask", "TensorFlow/Keras", "NumPy", "Prisma", "PostgreSQL", "UploadThing"],
     github: "https://github.com/Khushbumandal2060/TumorDetect",
     live: "#",
     image: "/braintumor.png",
   },
   {
     title: "Authentication System",
-    desc: "A secure full-stack authentication system with Email OTP verification, JWT authentication, password reset, active session management, security audit logs, and modern responsive UI.",
-    tech: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "JWT", "bcrypt.js", "Nodemailer"],
+    desc: "A secure full-stack authentication system with Email OTP verification, JWT authentication, password reset, active session management, security audit logs, and a modern responsive UI.",
+    tech: [
+      "React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "JWT", "bcrypt.js", "Nodemailer"],
     github: "https://github.com/Khushbumandal2060/Authentication-System",
     live: "https://authentication-system-frontend-1ly2.onrender.com/",
     image: "/authentication.png",
@@ -49,7 +50,7 @@ export default function Projects() {
       {/* Background Glow */}
       <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-fuchsia-600/5 rounded-full blur-[140px] -z-10" />
 
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[1600px] mx-auto">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -70,7 +71,7 @@ export default function Projects() {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {projects.map((project, i) => (
             <motion.div
               key={project.title}
@@ -78,7 +79,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="group h-[430px] rounded-2xl overflow-hidden
+              className="group h-full rounded-2xl overflow-hidden
                 bg-white/[0.03]
                 border border-white/10
                 hover:border-violet-500/30
@@ -86,7 +87,7 @@ export default function Projects() {
                 flex flex-col"
             >
               {/* Image */}
-              <div className="relative h-48 w-full overflow-hidden">
+              <div className="relative h-48 w-full overflow-hidden shrink-0">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -102,68 +103,71 @@ export default function Projects() {
                   {project.title}
                 </h3>
 
-                <p className="text-zinc-400 text-sm leading-relaxed flex-1 line-clamp-3">
+                <p className="text-zinc-400 text-sm leading-relaxed line-clamp-3 mb-4">
                   {project.desc}
                 </p>
 
-                {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2 mt-4">
-                  {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="text-[11px] px-2 py-1 rounded-full
-                        bg-violet-500/10
-                        text-violet-300
-                        border border-violet-500/20"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+                {/* Bottom block: pinned to the bottom of every card, in a row */}
+                <div className="mt-auto">
+                  {/* Tech Stack */}
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {project.tech.map((tech) => (
+                      <span
+                        key={tech}
+                        className="text-[11px] px-2 py-1 rounded-full
+                          bg-violet-500/10
+                          text-violet-300
+                          border border-violet-500/20"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
 
-                {/* Buttons */}
-                <div className="grid grid-cols-2 gap-3 mt-5">
-                  {/* GitHub */}
-                  <Link
-                    href={project.github}
-                    target="_blank"
-                    className="flex items-center justify-center gap-2 py-2 rounded-lg
-                      border border-white/10
-                      bg-white/5
-                      hover:bg-white/10
-                      text-zinc-300
-                      transition-all duration-300"
-                  >
-                    <FaGithub />
-                    <span className="text-sm font-medium">Code</span>
-                  </Link>
-
-                  {/* Live Demo */}
-                  {project.live !== "#" ? (
+                  {/* Buttons */}
+                  <div className="grid grid-cols-2 gap-3">
+                    {/* GitHub */}
                     <Link
-                      href={project.live}
+                      href={project.github}
                       target="_blank"
                       className="flex items-center justify-center gap-2 py-2 rounded-lg
-                        bg-violet-600
-                        hover:bg-violet-500
-                        text-white
+                        border border-white/10
+                        bg-white/5
+                        hover:bg-white/10
+                        text-zinc-300
                         transition-all duration-300"
                     >
-                      <FaExternalLinkAlt size={14} />
-                      <span className="text-sm font-medium">Live Demo</span>
+                      <FaGithub />
+                      <span className="text-sm font-medium">Code</span>
                     </Link>
-                  ) : (
-                    <button
-                      disabled
-                      className="flex items-center justify-center gap-2 py-2 rounded-lg
-                        bg-zinc-800
-                        text-zinc-500
-                        cursor-not-allowed"
-                    >
-                      <FaExternalLinkAlt size={14} />
-                      <span className="text-sm font-medium">Coming Soon</span>
-                    </button>
-                  )}
+
+                    {/* Live Demo */}
+                    {project.live !== "#" ? (
+                      <Link
+                        href={project.live}
+                        target="_blank"
+                        className="flex items-center justify-center gap-2 py-2 rounded-lg
+                          bg-violet-600
+                          hover:bg-violet-500
+                          text-white
+                          transition-all duration-300"
+                      >
+                        <FaExternalLinkAlt size={14} />
+                        <span className="text-sm font-medium">Live Demo</span>
+                      </Link>
+                    ) : (
+                      <button
+                        disabled
+                        className="flex items-center justify-center gap-2 py-2 rounded-lg
+                          bg-zinc-800
+                          text-zinc-500
+                          cursor-not-allowed"
+                      >
+                        <FaExternalLinkAlt size={14} />
+                        <span className="text-sm font-medium">Coming Soon</span>
+                      </button>
+                    )}
+                  </div>
                 </div>
               </div>
             </motion.div>
