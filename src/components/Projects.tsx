@@ -11,7 +11,7 @@ const projects = [
     desc: "A full-featured job portal for posting and applying to jobs with user and admin panels.",
     tech: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
     github: "https://github.com/Khushbumandal2060/Jobnepal",
-    live: "#",
+    live: "https://jobnepal.howto.rocks/",
     image: "/Jobnepal.png",
   },
   {
