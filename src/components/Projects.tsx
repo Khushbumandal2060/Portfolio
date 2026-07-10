@@ -19,7 +19,7 @@ const projects = [
     desc: "AI-powered brain tumor detection system from MRI images using deep learning.",
     tech: ["Python", "Flask", "TensorFlow/Keras", "NumPy", "Prisma", "PostgreSQL", "UploadThing"],
     github: "https://github.com/Khushbumandal2060/TumorDetect",
-    live: "#",
+    live: "https://tumordetect-6pyo.onrender.com",
     image: "/braintumor.png",
   },
   {
