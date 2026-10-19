@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import AboutMe from "../components/AboutMe";
 import Skills from "../components/Skills";
+import Experience from "../components/Experience";
 import Projects from "../components/Projects";
 import Services from "../components/Services";
 import Education from "../components/Education";
@@ -18,6 +19,7 @@ export default function Home() {
   const aboutRef = useRef<HTMLElement>(null);
   const servicesRef = useRef<HTMLElement>(null);
   const skillsRef = useRef<HTMLElement>(null);
+  const experienceRef = useRef<HTMLElement>(null);
   const projectsRef = useRef<HTMLElement>(null);
   const educationRef = useRef<HTMLElement>(null);
   const achievementsRef = useRef<HTMLElement>(null);
@@ -28,6 +30,7 @@ export default function Home() {
     about: aboutRef,
     services: servicesRef,
     skills: skillsRef,
+    experience: experienceRef,
     projects: projectsRef,
     education: educationRef,
     achievements: achievementsRef,
@@ -52,6 +55,10 @@ export default function Home() {
 
       <section ref={skillsRef}>
         <Skills />
+      </section>
+
+      <section ref={experienceRef}>
+        <Experience />
       </section>
 
       <section ref={projectsRef}>

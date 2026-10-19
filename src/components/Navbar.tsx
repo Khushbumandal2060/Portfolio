@@ -35,6 +35,7 @@ const Navbar: React.FC<NavbarProps> = ({ sections }) => {
     { label: "About", ref: "about" },
     { label: "Services", ref: "services" },
     { label: "Skills", ref: "skills" },
+    { label: "Experience", ref: "experience" },
     { label: "Projects", ref: "projects" },
     { label: "Education", ref: "education" },
     { label: "Achievements", ref: "achievements" },
