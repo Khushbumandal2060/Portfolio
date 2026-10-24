@@ -125,7 +125,7 @@ export default function Contact() {
                   },
                   {
                     icon: FaLinkedin,
-                    href: "https://www.linkedin.com/in/khushbu-kumari-mandal/",
+                    href: "https://www.linkedin.com/in/khushbu-kumari-mandal",
                     label: "LinkedIn",
                   },
                 ].map(({ icon: Icon, href, label }) => (

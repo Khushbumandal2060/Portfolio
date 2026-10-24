@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { FiArrowUp, FiHeart } from "react-icons/fi";
 
@@ -104,20 +103,21 @@ const Footer: React.FC<FooterProps> = ({ sections }) => {
             <div className="flex gap-2">
               {[
                 { icon: FaGithub, href: "https://github.com/Khushbumandal2060" },
-                { icon: FaLinkedin, href: "https://www.linkedin.com/in/khushbu-kumari-mandal/" },
+                { icon: FaLinkedin, href: "https://www.linkedin.com/in/khushbu-kumari-mandal" },
                 { icon: FaInstagram, href: "https://www.instagram.com/khushbumandal15/" },
               ].map(({ icon: Icon, href }) => (
-                <Link
+                <a
                   key={href}
                   href={href}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="w-9 h-9 rounded-lg bg-white/3 border border-white/5
                     flex items-center justify-center text-zinc-600 text-sm
                     hover:text-violet-400 hover:border-violet-500/20 hover:bg-white/6
                     transition-all duration-300"
                 >
                   <Icon />
-                </Link>
+                </a>
               ))}
             </div>
           </div>
